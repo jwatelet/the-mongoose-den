@@ -1,0 +1,52 @@
+---
+require:
+- rubocop-rspec
+- rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.1.2
+  NewCops: enable
+  Exclude:
+    - "db/migrate/*"
+    - "db/schema.rb"
+    - "bin/bundle"
+
+Layout/LineLength:
+  Exclude:
+    - "config/initializers/devise.rb"
+
+Lint/MissingSuper:
+  Exclude:
+    - "app/components/**/*"
+
+Metrics/BlockLength:
+  Exclude:
+    - "config/**/*"
+    - "lib/tasks/*"
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Rails/RakeEnvironment:
+  Exclude:
+    - "lib/tasks/auto_annotate_models.rake"
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GlobalStdStream:
+  Exclude:
+    - "config/environments/production.rb"
+
+Style/RedundantFetchBlock:
+  Exclude:
+    - "config/puma.rb"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
