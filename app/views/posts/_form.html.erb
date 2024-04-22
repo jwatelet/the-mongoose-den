@@ -22,11 +22,11 @@
     <%= f.label :body, class: "label" %>
     <% unless @post.errors[:body].present? %>
       <div class="control">
-        <%= f.text_area :body, class: "input" %>
+        <%= f.text_area :body, rows: 10, class: "textarea" %>
       </div>
     <% else %>
       <div class="control has-icons-left has-icons-right">
-        <%= f.text_area :body, class: "input is-danger" %>
+        <%= f.text_area :body, rows:10, class: "textarea is-danger" %>
         <span class="icon is-small is-right">
          <i class="fas fa-exclamation-triangle"></i>
         </span>
