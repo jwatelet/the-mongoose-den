@@ -1,16 +1,46 @@
 <%= form_for @post do |f| %>
   <div class="field">
     <%= f.label :title, class: "label" %>
-    <div class="control">
-      <%= f.text_field :title, class: "input" %>
-    </div>
+    <% unless @post.errors[:title].present? %>
+      <div class="control">
+        <%= f.text_field :title, class: "input" %>
+      </div>
+    <% else %>
+      <div class="control has-icons-left has-icons-right">
+        <%= f.text_field :title, class: "input is-danger" %>
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <span class="icon is-small is-right">
+         <i class="fas fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <% @post.errors.full_messages_for(:title).each do |message| %>
+        <p class="help is-danger"> <%= message %> </p>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field">
     <%= f.label :body, class: "label" %>
-    <div class="control">
-      <%= f.text_area :body, class: "input" %>
-    </div>
+    <% unless @post.errors[:body].present? %>
+      <div class="control">
+        <%= f.text_area :body, class: "input" %>
+      </div>
+    <% else %>
+      <div class="control has-icons-left has-icons-right">
+        <%= f.text_area :body, class: "input is-danger" %>
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <span class="icon is-small is-right">
+         <i class="fas fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <% @post.errors.full_messages_for(:body).each do |message| %>
+        <p class="help is-danger"> <%= message %> </p>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field is-grouped">

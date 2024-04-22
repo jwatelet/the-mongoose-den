@@ -9,6 +9,6 @@
 #  updated_at :datetime         not null
 #
 class Post < ApplicationRecord
-  validates :title, presence: true
+  validates :title, presence: true, length: { minimum: 10 }
   validates :body, presence: true
 end
