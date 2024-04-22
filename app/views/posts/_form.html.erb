@@ -1,0 +1,21 @@
+<%= form_for @post do |f| %>
+  <div class="field">
+    <%= f.label :title, class: "label" %>
+    <div class="control">
+      <%= f.text_field :title, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :body, class: "label" %>
+    <div class="control">
+      <%= f.text_area :body, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <%= f.submit class: "button is-link" %>
+    </div>
+  </div>
+<% end %>
