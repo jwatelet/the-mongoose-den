@@ -11,6 +11,17 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="columns is-flex-direction-column is-fullheight-100vh">
+      <header class="column is-narrow">
+        <%= render 'layouts/header' %>
+      </header>
+      <div class="column">
+        <%= yield %>
+      </div>
+      <div class="column is-narrow">
+        <%= render 'layouts/footer' %>
+      </div> 
+    </div>    
   </body>
 </html>
