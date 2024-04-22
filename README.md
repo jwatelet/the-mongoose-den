@@ -1,24 +1,11 @@
-# README
+# The Mongoose Den
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the final project of the ruby course. The purpose of this application is to be a social network.
 
-Things you may want to cover:
 
-* Ruby version
+## TODO
 
-* System dependencies
+- Finalize post
+- Adding user handling and install devise
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Made for [the odin project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
