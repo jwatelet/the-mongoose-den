@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+rdbg -O -c -- bundle exec rspec

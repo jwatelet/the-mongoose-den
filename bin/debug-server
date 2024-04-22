@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+rdbg -n --open -c -- bin/rails s 
