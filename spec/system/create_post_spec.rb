@@ -1,6 +1,12 @@
 require "rails_helper"
 
 RSpec.describe "Creating a post" do
+  let(:user) { create(:user) }
+
+  before do
+    login_as(user)
+  end
+
   context "when inputs are valid" do
     it "creates a new post" do
       visit new_post_path
