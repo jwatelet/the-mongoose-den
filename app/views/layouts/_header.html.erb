@@ -1,8 +1,6 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <h1>The Mongoose Den</h1>
-    </a>
+  <div class="navbar-brand">    
+    <%= link_to "The Mongoose Den", root_path, class: "navbar-item" %>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
@@ -48,12 +46,8 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
+          <%= link_to 'Sign up', new_user_registration_path, class: "button is-primary" %>
+          <%= link_to 'Log in', new_user_session_path, class: "button is-light" %>
         </div>
       </div>
     </div>
