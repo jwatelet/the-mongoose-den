@@ -1,26 +1,28 @@
 <div class="container">
-  <div class="content">
-    <h1>Profile</h1>
-
-    <figure class="image is-128x128">
-      <%= profile_image(@user, 128) %>
-    </figure>
-    
-    <h2>Email</h2>
-    <p>
-      <%= @user.email %>
-    </p>
-
-    <%= turbo_frame_tag "user" do %>
-      <h2>Username</h2>
-      <p>
-        <%= @user.username %>
-      </p>
-      <div class="control">
-        <%= link_to 'Edit', edit_user_path(@user), class: "button is-link" %>
+  <div class="content is-flex is-justify-content-center">
+    <div class="columns">
+      <div class="column is-narrow">
+        <h1>Profile</h1>
+        <figure class="image is-128x128">
+          <%= profile_image(@user, 128) %>
+        </figure>
       </div>
-    <% end %>
-
-    
+      
+      <div class="column">
+        <h2>Email</h2>
+        <p>
+          <%= @user.email %>
+        </p>
+        <%= turbo_frame_tag "user" do %>
+          <h2>Username</h2>
+          <p>
+            <%= @user.username %>
+          </p>
+          <div class="control">
+            <%= link_to 'Edit', edit_user_path(@user), class: "button is-link" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
