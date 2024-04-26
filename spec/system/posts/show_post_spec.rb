@@ -8,7 +8,7 @@ RSpec.describe "Show post" do
   end
 
   context "when user own the post" do
-    let(:post) { create(:post, user:) }
+    let(:post) { create(:post, author: user) }
 
     it "shows edit button" do
       visit post_path(post)

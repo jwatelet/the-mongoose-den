@@ -20,7 +20,7 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
-  has_many :posts, dependent: :destroy
+  has_many :posts, foreign_key: "author_id", inverse_of: "author", dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

@@ -53,6 +53,6 @@ class PostsController < ApplicationController
   def action_permited?
     post = Post.find(params[:id])
 
-    redirect_to root_path, alert: "Not authorized action" if current_user.id != post.user_id
+    redirect_to root_path, alert: "Not authorized action" if current_user.id != post.author_id
   end
 end
