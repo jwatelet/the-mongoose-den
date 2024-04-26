@@ -7,12 +7,16 @@
       <%= @user.email %>
     </p>
 
-    <h2>Username</h2>
-    <p>
-      <%= @user.username %>
-    </p>
-    <div class="control">
-      <%= link_to 'Edit', edit_user_path(@user), class: "button is-link" %>
-    </div>
+    <%= turbo_frame_tag "user" do %>
+      <h2>Username</h2>
+      <p>
+        <%= @user.username %>
+      </p>
+      <div class="control">
+        <%= link_to 'Edit', edit_user_path(@user), class: "button is-link" %>
+      </div>
+    <% end %>
+
+    
   </div>
 </div>
