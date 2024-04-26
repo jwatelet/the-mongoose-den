@@ -16,4 +16,13 @@ RSpec.describe "Update profile" do
       expect(page).to have_content("Killer666")
     end
   end
+
+  context "when an non admin user try to edit another user" do
+    let(:another_user) { create(:user) }
+
+    it "shows an error" do
+      visit edit_user_path(another_user)
+      expect(page).to have_content("Not authorized action")
+    end
+  end
 end
