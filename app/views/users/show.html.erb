@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="content">
+    <h1>Profile</h1>
+    
+    <h2>Email</h2>
+    <p>
+      <%= @user.email %>
+    </p>
+
+    <h2>Username</h2>
+    <p>
+      <%= @user.username %>
+    </p>
+    <div class="control">
+      <%= link_to 'Edit', edit_user_path(current_user), class: "button is-link" %>
+    </div>
+  </div>
+</div>

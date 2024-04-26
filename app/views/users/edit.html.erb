@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="content">
+    <h1>Edit Profile</h1>
+
+    <%= form_for @user do |f| %>
+      <div class="field">
+        <%= f.label :username, class: "label" %>
+        <% unless @user.errors[:username].present? %>
+          <div class="control">
+            <%= f.text_field :username, class: "input" %>
+          </div>
+        <% else %>
+          <div class="control has-icons-right">
+            <%= f.text_field :username, class: "input is-danger" %>
+            <span class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+            </span>
+          </div>
+          <% @user.errors.full_messages_for(:username).each do |message| %>
+            <p class="help is-danger"> <%= message %> </p>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control mt-2">
+          <%= f.submit "Update", class: "button is-link" %>
+        </div>
+      </div>
+    <% end%>
+  </div>
+</div>

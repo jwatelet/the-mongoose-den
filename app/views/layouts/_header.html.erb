@@ -19,34 +19,14 @@
       <a class="navbar-item">
         Documentation
       </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item is-selected">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
-        </div>
-      </div>
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
         <% if user_signed_in? %>
           <div class="buttons">
+            <%= link_to 'Create Post', new_post_path, class: "button is-link" %>
+            <%= link_to 'Profile', current_user, class: "button is-link" %>
             <%= link_to 'Log out', destroy_user_session_path, class: "button is-primary", data: {
               turbo_method: :delete
             } %>

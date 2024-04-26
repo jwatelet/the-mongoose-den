@@ -12,7 +12,7 @@ RSpec.describe "Creating a post" do
       visit new_post_path
       fill_in "Title", with: "My marvelous new post"
       fill_in "Body", with: "A very interesting post about ruby on rails"
-      click_on "Create Post"
+      click_on "Create"
 
       expect(page).to have_content("My marvelous new post")
     end
@@ -23,7 +23,7 @@ RSpec.describe "Creating a post" do
       it "shows the right error message" do
         visit new_post_path
         fill_in "Body", with: "A very interesting post about ruby on rails"
-        click_on "Create Post"
+        click_on "Create"
         expect(page).to have_content("Title can't be blank")
       end
     end
@@ -32,7 +32,7 @@ RSpec.describe "Creating a post" do
       it "shows the right error message" do
         visit new_post_path
         fill_in "Title", with: "My marvelous new post"
-        click_on "Create Post"
+        click_on "Create"
         expect(page).to have_content("Body can't be blank")
       end
     end
@@ -42,7 +42,7 @@ RSpec.describe "Creating a post" do
         visit new_post_path
         fill_in "Title", with: "My marvelous new post"
         fill_in "Body", with: "Short"
-        click_on "Create Post"
+        click_on "Create"
         expect(page).to have_content("Body is too short (minimum is 10 characters)")
       end
     end

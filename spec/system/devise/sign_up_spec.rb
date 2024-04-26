@@ -5,6 +5,7 @@ RSpec.describe "Sign up" do
     it "signs up sucessfully" do
       visit new_user_registration_path
       fill_in "Email", with: "test@test-mail.com"
+      fill_in "Username", with: "test1234"
       fill_in "Password", with: "azerty1234"
       fill_in "Password confirmation", with: "azerty1234"
       click_on "commit"
