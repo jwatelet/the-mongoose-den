@@ -45,4 +45,8 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
     end
   end
+
+  def gravatar_id
+    Digest::MD5.hexdigest(email.downcase)
+  end
 end
