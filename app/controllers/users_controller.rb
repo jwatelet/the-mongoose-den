@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :check_if_update_is_authorized, only: %i[edit update]
+  before_action :action_permited?, only: %i[edit update]
 
   def show
     @user = User.find(params[:id])
@@ -23,7 +22,7 @@ class UsersController < ApplicationController
 
   private
 
-  def check_if_update_is_authorized
+  def action_permited?
     @user = User.find(params[:id])
 
     redirect_to root_path, alert: "Not authorized action" if current_user.id != @user.id
