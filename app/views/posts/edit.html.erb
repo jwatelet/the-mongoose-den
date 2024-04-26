@@ -1,7 +1,9 @@
 <div class="container">
-  <div class="content"> 
-    <%= render 'form' %>
-  </div>
+  <%= turbo_frame_tag "post" do %>
+    <div class="content"> 
+      <%= render 'form' %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= link_to 'Back', posts_path %>
   </div>

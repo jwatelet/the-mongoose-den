@@ -1,20 +1,24 @@
 <div class="container">
-  <div class="content">
-    <h1>
-      <%= @post.title %>
-    </h1>
-  
-    <p>
-      <%= @post.body %>
-    </p>
+  <%= turbo_frame_tag "post" do %>
+    <div class="content">
+      <h1>
+        <%= @post.title %>
+      </h1>
     
-  </div>
-  <div class="actions">
-    <%= link_to 'Back', posts_path %>
-    <%= link_to 'Edit', edit_post_path(@post) %>
-    <%= link_to "Destroy", post_path(@post), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
-  </div>
+      <p>
+        <%= @post.body %>
+      </p>
+      
+    </div>
+
+    <% if owner?(@post) %>
+      <div class="actions">
+        <%= link_to 'Edit', edit_post_path(@post), class: "button is-link" %>
+        <%= link_to "Destroy", post_path(@post), class: "button is-danger", data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      } %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

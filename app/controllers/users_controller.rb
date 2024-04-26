@@ -22,12 +22,6 @@ class UsersController < ApplicationController
 
   private
 
-  def action_permited?
-    @user = User.find(params[:id])
-
-    redirect_to root_path, alert: "Not authorized action" if current_user.id != @user.id
-  end
-
   def user_params
     params.require(:user).permit(:username)
   end
