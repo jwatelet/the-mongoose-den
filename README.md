@@ -5,7 +5,8 @@ This is the final project of the ruby course. The purpose of this application is
 
 ## TODO
 
-- Finalize post
-- Adding user handling and install devise
+- Add comments for posts
+- Add likes for posts
+- Sending mails
 
 Made for [the odin project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
