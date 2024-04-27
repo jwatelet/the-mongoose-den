@@ -22,22 +22,12 @@
     </div>
 
     <div class="navbar-end">
-      <div class="navbar-item">
         <% if user_signed_in? %>
-          <div class="buttons">
-            <%= link_to 'New Post', new_post_path, class: "button is-link" %>
-            <%= link_to 'Profile', current_user, class: "button is-link" %>
-            <%= link_to 'Log out', destroy_user_session_path, class: "button is-primary", data: {
-              turbo_method: :delete
-            } %>
-          </div>
+          <%= render 'layouts/header/create-post-button' %>
+          <%= render 'layouts/header/navbar-dropdown' %>
         <% else %>
-          <div class="buttons">
-            <%= link_to 'Sign up', new_user_registration_path, class: "button is-primary" %>
-            <%= link_to 'Log in', new_user_session_path, class: "button is-light" %>
-          </div>
+          <%= render 'layouts/header/navbar-buttons' %>
         <% end %>
-      </div>
     </div>
   </div>
 </nav>

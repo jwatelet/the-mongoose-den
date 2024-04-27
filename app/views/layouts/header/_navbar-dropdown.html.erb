@@ -1,0 +1,19 @@
+<div class="navbar-item has-dropdown" data-controller="header-dropdown" data-header-dropdown-target="dropdown">
+  <a class="navbar-link" data-action="click->header-dropdown#toggle">
+    <div class="image is-rounded">
+      <%= profile_image(current_user, 128) %>
+    </div>
+  </a>
+
+  <div class="navbar-dropdown">
+    <%= link_to 'Profile', current_user, class: "navbar-item" %>
+    <hr class="navbar-divider">
+    <%= link_to 'Log out', destroy_user_session_path, class: "navbar-item", data: {
+      turbo_method: :delete
+    } %>
+  </div>
+</div>
+
+<div class="buttons">
+ 
+</div>
