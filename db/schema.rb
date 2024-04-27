@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_26_152329) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_27_143844) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.string "commentable_type", null: false
+    t.bigint "commentable_id", null: false
+    t.bigint "commenter_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
+    t.index ["commenter_id"], name: "index_comments_on_commenter_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -38,5 +49,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_26_152329) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "users", column: "commenter_id"
   add_foreign_key "posts", "users", column: "author_id"
 end

@@ -19,6 +19,7 @@
 #
 class Post < ApplicationRecord
   belongs_to :author, class_name: "User", inverse_of: "posts"
+  has_many :comments, as: :commentable, dependent: :destroy
 
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
