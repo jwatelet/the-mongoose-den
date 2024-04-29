@@ -1,0 +1,20 @@
+      <article class="media comment mt-3">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <%= profile_image(comment.commenter, 128) %>
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>
+                <%= link_to comment.commenter.username, user_path(comment.commenter) %>
+              </strong>
+              <br />
+              <%= comment.content %>
+              <br />
+              <small><a>Like</a> · <a>Reply</a> · <%= time_ago_in_words(comment.created_at) %></small>
+            </p>
+          </div>
+        </div>
+      </article>
