@@ -1,36 +1,37 @@
-<div class="container">
-  <%= turbo_frame_tag "post" do %>
-    <div class="content">
-      <h1>
-        <%= @post.title %>
-      </h1>
+<div class="container is-desktop">
+  <div class="columns">
+    <div class="column">
+    <%= turbo_frame_tag "post" do %>
+      <div class="content">
+        <h1>
+          <%= @post.title %>
+        </h1>
     
-      <p>
-        <%= @post.body %>
-      </p>
-      
-    </div>
-
-    <% if owner?(@post) %>
-      <div class="actions">
-        <%= link_to 'Edit', edit_post_path(@post), class: "button is-link" %>
-        <%= link_to "Destroy", post_path(@post), class: "button is-danger", data: {
-                        turbo_method: :delete,
-                        turbo_confirm: "Are you sure?"
-                      } %>
+        <p>
+          <%= @post.body %>
+        </p>
+    
       </div>
-    <% end %>
-  <% end %>
-
-  <div class="comments" id="comments">
-    <div class="comments">
-      <% @comments.each do |comment| %>
-        <%= render 'comments/comment', comment:  %>
+      <% if owner?(@post) %>
+        <div class="actions">
+          <%= link_to 'Edit', edit_post_path(@post), class: "button is-link" %>
+          <%= link_to "Destroy", post_path(@post), class: "button is-danger", data: {
+                          turbo_method: :delete,
+                          turbo_confirm: "Are you sure?"
+                        } %>
+        </div>
       <% end %>
+    <% end %>
+    <div class="comments" id="comments">
+      <div class="comments">
+        <% @comments.each do |comment| %>
+          <%= render 'comments/comment', comment:  %>
+        <% end %>
+      </div>
+    </div>
+    <%= turbo_frame_tag "new_comment", target: "_top" do %>
+      <%= render 'comments/form', post: @post, comment: @comment %>
+    <% end%>
     </div>
   </div>
-
-  <%= turbo_frame_tag "new_comment", target: "_top" do %>
-    <%= render 'comments/form', post: @post, comment: @comment %>
-  <% end%>
 </div>
