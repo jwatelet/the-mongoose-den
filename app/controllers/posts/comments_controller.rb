@@ -3,7 +3,7 @@ module Posts
     private
 
     def set_commentable
-      @commentable = Post.find(param[:id])
+      @commentable = Post.find(params[:post_id])
     end
   end
 end

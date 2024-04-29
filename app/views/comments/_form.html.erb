@@ -1,0 +1,32 @@
+  <div class="new-comment mt-5">
+    <%= form_for [post, comment]  do |f| %>
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <%= profile_image(current_user, 128) %>
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="field">
+          <% unless comment.errors[:content].present? %>
+            <p class="control">
+              <%= f.text_area :content, placeholder: "Add a comment...", class: "textarea" %>
+            </p>
+          <% else %>
+            <p class="control">
+              <%= f.text_area :content, placeholder: "Add a comment...", class: "textarea is-danger" %>
+            </p>
+            <% comment.errors.full_messages_for(:content).each do |message| %>
+              <p class="help is-danger"> <%= message %> </p>
+            <% end %>
+          <% end %>
+          </div>
+          <div class="field">
+            <p class="control mt-1">
+              <%= f.submit "Post comment", class: "button" %>
+            </p>
+          </div>
+        </div>
+      </article>
+    <% end %>
+  </div>

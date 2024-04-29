@@ -29,4 +29,8 @@
       <% end %>
     </div>
   </div>
+
+  <%= turbo_frame_tag "new_comment", target: "_top" do %>
+    <%= render 'comments/form', post: @post, comment: @comment %>
+  <% end%>
 </div>
