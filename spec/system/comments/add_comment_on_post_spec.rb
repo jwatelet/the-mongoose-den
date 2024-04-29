@@ -16,4 +16,13 @@ RSpec.describe "Add a comment on a post" do
       expect(page).to have_content("My best comment")
     end
   end
+
+  context "when the input is not correct" do
+    it "shows error" do
+      visit post_path(post)
+      fill_in "comment_content", with: nil
+      click_on "Post comment"
+      expect(page).to have_content("Content can't be blank")
+    end
+  end
 end
