@@ -20,6 +20,6 @@
 #  fk_rails_...  (commenter_id => users.id)
 #
 class Comment < ApplicationRecord
-  belongs_to :commentable, polymorphic: true
+  belongs_to :commentable, polymorphic: true, counter_cache: true
   belongs_to :commenter, class_name: "User"
 end
