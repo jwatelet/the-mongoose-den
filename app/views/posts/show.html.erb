@@ -22,9 +22,11 @@
     <% end %>
   <% end %>
 
-  <div class="comments">
-    <% @comments.each do |comment| %>
-      <%= render 'comments/comment', comment:  %>
-    <% end %>
+  <div class="comments" id="comments">
+    <div class="comments">
+      <% @comments.each do |comment| %>
+        <%= render 'comments/comment', comment:  %>
+      <% end %>
+    </div>
   </div>
 </div>
