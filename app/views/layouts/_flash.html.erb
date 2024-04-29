@@ -1,15 +1,17 @@
-<% if notice.present? %>
-  <div class="column is-narrow has-text-centered mt-4 is-flex is-justify-content-center">
-    <div class="notification is-info" id="notice">
-      <%= notice %>
+<div class="content mx-5">
+  <% if notice.present? %>
+    <div class="column is-narrow has-text-centered mt-4 is-flex is-justify-content-center">
+      <div class="notification is-info" id="notice">
+        <%= notice %>
+      </div>
     </div>
-  </div>
-<% end %>
-
-<% if alert.present? %>
-  <div class="column is-narrow has-text-centered mt-4 is-flex is-justify-content-center">
-    <div class="notification is-info" id="notice">
-      <%= alert %>
+  <% end %>
+  
+  <% if alert.present? %>
+    <div class="column is-narrow has-text-centered mt-4 is-flex is-justify-content-center">
+      <div class="notification is-info" id="notice">
+        <%= alert %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
