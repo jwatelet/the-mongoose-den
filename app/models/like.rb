@@ -19,6 +19,6 @@
 #  fk_rails_...  (liker_id => users.id)
 #
 class Like < ApplicationRecord
-  belongs_to :likeable, polymorphic: true
+  belongs_to :likeable, polymorphic: true, counter_cache: true
   belongs_to :liker, class_name: "User"
 end
