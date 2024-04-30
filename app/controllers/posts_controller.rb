@@ -3,12 +3,17 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+                 .includes(:author)
                  .order(created_at: :desc)
   end
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.includes([:commenter]).order(created_at: :desc)
+    @comments = @post
+                .comments
+                .includes(:commenter)
+                .order(created_at: :desc)
+
     @comment = @post.comments.new
   end
 

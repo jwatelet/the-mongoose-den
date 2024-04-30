@@ -5,15 +5,13 @@ RSpec.describe "Shows all posts" do
 
   before do
     login_as(user)
+    create_list(:post, 20, author: user)
   end
 
   context "with three multiple posts created" do
     it "show all posts" do
-      create(:post, author: user)
-      create(:post, author: user)
-      create(:post, author: user)
       visit posts_path
-      expect(page).to have_css(".post-box", count: 3)
+      expect(page).to have_css(".post-box", count: 20)
     end
   end
 end
