@@ -26,4 +26,8 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
+
+  def find_like_from(user)
+    likes.find_by(likeable: self, liker: user)
+  end
 end

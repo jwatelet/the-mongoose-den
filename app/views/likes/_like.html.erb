@@ -1,7 +1,7 @@
 <%= turbo_frame_tag dom_id(likeable) do  %>
-  <% like = like(likeable) %>
+  <% like = likeable.find_like_from(current_user) %>
   <% if like %>
-    <%= link_to like_path(like(likeable)), class: "level-item dislike", data: {
+    <%= link_to like_path(like), class: "level-item dislike", data: {
                             turbo_method: :delete
                           } do %>
       <span class="icon is-small">
