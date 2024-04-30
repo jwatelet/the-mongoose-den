@@ -1,0 +1,24 @@
+<div class="post-box mt-2">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <%= link_to post.title, post %>
+          <small>
+            <%= time_ago_in_words(post.created_at) %>
+          </small>
+        </p>
+      </div>
+      <nav class="level is-mobile">
+        <div class="level-left is-flex is-flex-direction-row">
+          <%= link_to post_path(post, anchor: "comments"), class: "level-item comment", "aria-label" => "comment" do  %>
+            <span class="icon is-small">
+              <i class="fa-solid fa-comment" aria-hidden="true"></i>
+            </span>
+            <p class="ml-1" ><%= post.comments.size %></p>
+          <% end%>
+          <%= render 'likes/like', likeable: post %>
+        </div>
+      </nav>
+    </div>
+  </article>
+</div>

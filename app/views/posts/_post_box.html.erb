@@ -8,12 +8,14 @@
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong>
-                      <%= link_to post.author.username, post.author  %>
-                    </strong>
-
-                    <small><%= time_ago_in_words(post.created_at) %></small>
-                    <br />
+                    <div>
+                      <strong>
+                        <%= link_to post.author.username, post.author  %>
+                      </strong>
+                      <small>
+                        <%= time_ago_in_words(post.created_at) %>
+                      </small>
+                    </div>
                     <%= link_to post.title, post %>
                   </p>
                 </div>

@@ -1,28 +1,11 @@
-<div class="container">
-  <div class="content is-flex is-justify-content-center">
-    <div class="columns">
-      <div class="column is-narrow">
-        <h1>Profile</h1>
-        <figure class="image is-128x128">
-          <%= profile_image(@user, 128, true) %>
-        </figure>
-      </div>
+<div class="container is-flex is-justify-content-center">
+  <div class="content is-flex is-flex-direction-column">
+    <%= render 'profile', user: @user %>
+    <div class="posts ">
       
-      <div class="column">
-        <h2>Email</h2>
-        <p>
-          <%= @user.email %>
-        </p>
-        <%= turbo_frame_tag "user" do %>
-          <h2>Username</h2>
-          <p>
-            <%= @user.username %>
-          </p>
-          <div class="control">
-            <%= link_to 'Edit', edit_user_path(@user), class: "button is-link" %>
-          </div>
-        <% end %>
-      </div>
+      <% @posts.each do |post| %>
+        <%= render 'posts/post_light', post: %>
+      <% end %>
     </div>
   </div>
 </div>
