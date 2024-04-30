@@ -1,0 +1,18 @@
+<%= turbo_frame_tag dom_id(likeable) do  %>
+  <% like = like(likeable) %>
+  <% if like %>
+    <%= link_to like_path(like(likeable)), class: "level-item dislike", data: {
+                            turbo_method: :delete
+                          } do %>
+      <span class="icon is-small">
+        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+      </span>
+    <% end %>
+  <% else %>
+    <%= button_to post_likes_path(likeable) ,class: "level-item like", "aria-label" => "comment" do %>
+      <span class="icon has-text-link is-small">
+        <i class="fa-regular fa-heart" aria-hidden="true"></i>
+      </span>
+    <% end %>
+  <% end %>
+<% end%>

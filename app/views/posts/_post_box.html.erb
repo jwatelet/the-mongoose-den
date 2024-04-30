@@ -25,11 +25,7 @@
                       </span>
                       <p class="ml-1" ><%= post.comments.size %></p>
                     <% end%>
-                    <a class="level-item" aria-label="like">
-                      <span class="icon is-small">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                      </span>
-                    </a>
+                    <%= render 'likes/like', likeable: post %>
                   </div>
                 </nav>
               </div>

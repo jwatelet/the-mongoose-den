@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments, only: %i[new create], module: "posts"
+    resources :likes, only: %i[create destroy], shallow: true, module: "posts"
   end
 
   resources :users, only: %i[show edit update]
