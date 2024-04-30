@@ -8,30 +8,38 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-20.times do
-  user = User.create(
-    email: Faker::Internet.email,
-    password: "azerty1234",
-    username: Faker::Internet.username
-  )
-
-  post = Post.create(
-    author: user,
-    title: Faker::Lorem.sentence,
-    body: Faker::Lorem.paragraph(sentence_count: 10)
-  )
-
-  5.times do
-    commenter = User.create(
+User.transaction do
+  20.times do
+    user = User.create(
       email: Faker::Internet.email,
       password: "azerty1234",
       username: Faker::Internet.username
     )
-    post.comments.create(
-      commenter:,
-      content: Faker::Lorem.sentence
-    )
-  end
 
-  Like.create(likeable: post, liker: user)
+    post = Post.create(
+      author: user,
+      title: Faker::Lorem.sentence,
+      body: Faker::Lorem.paragraph(sentence_count: 10)
+    )
+
+    rand(5).times do
+      commenter = User.create(
+        email: Faker::Internet.email,
+        password: "azerty1234",
+        username: Faker::Internet.username
+      )
+      post.comments.create(
+        commenter:,
+        content: Faker::Lorem.sentence
+      )
+    end
+    rand(10).times do
+      liker = User.create(
+        email: Faker::Internet.email,
+        password: "azerty1234",
+        username: Faker::Internet.username
+      )
+      Like.create(likeable: post, liker:)
+    end
+  end
 end
