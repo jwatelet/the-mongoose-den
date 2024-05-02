@@ -14,9 +14,11 @@
       <p>
         <%= @user.username %>
       </p>
-      <div class="control">
+      <div class="control is-flex">
         <% if user == current_user %>
           <%= link_to 'Edit', edit_user_path(user), class: "button is-link" %>
+        <% else %>
+          <%= render 'follows/follow_button', followed_user: user %>
         <% end %>
       </div>
     <% end %>

@@ -59,4 +59,12 @@ class User < ApplicationRecord
   def gravatar_id
     Digest::MD5.hexdigest(email.downcase)
   end
+
+  def find_follow_for(user)
+    followed_user_relationships.find_by(followed_user: user)
+  end
+
+  def follows?(user)
+    followed_users.where(followed_user: user).present?
+  end
 end

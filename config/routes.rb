@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: %i[show edit update]
+  resources :follows, only: %i[create destroy]
 end
