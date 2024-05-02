@@ -24,6 +24,14 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: "commenter_id", inverse_of: "commenter", dependent: :destroy
   has_many :likes, foreign_key: "liker_id", inverse_of: "liker", dependent: :destroy
 
+  has_many :follower_relationships, foreign_key: :followed_user_id, class_name: "Follow", inverse_of: "follower",
+                                    dependent: :destroy
+  has_many :followers, through: :follower_relationships, source: :follower
+
+  has_many :followed_user_relationships, foreign_key: :follower_id, class_name: "Follow", inverse_of: "followed_user",
+                                         dependent: :destroy
+  has_many :followed_users, through: :followed_user_relationships, source: :followed_user
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
