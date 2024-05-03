@@ -5,13 +5,14 @@ class LikesController < ApplicationController
     @like = @likeable.likes.new(liker: current_user)
 
     @like.save
-    redirect_to root_path
+    redirect_to @likeable
   end
 
   def destroy
     @like = Like.find(params[:id])
+    @likeable = @like.likeable
 
     @like.destroy
-    redirect_to root_path
+    redirect_to @likeable
   end
 end

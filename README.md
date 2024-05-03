@@ -5,7 +5,6 @@ This is the final project of the ruby course. The purpose of this application is
 
 ## TODO
 
-- add pagination for posts
 - add notifications for follows
 - Sending mails
 - use slug for users URL, and post URLS
