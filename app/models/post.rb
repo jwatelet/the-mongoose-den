@@ -20,6 +20,8 @@
 #  fk_rails_...  (author_id => users.id)
 #
 class Post < ApplicationRecord
+  paginates_per 5
+
   belongs_to :author, class_name: "User", inverse_of: "posts"
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :likes, as: :likeable, dependent: :destroy

@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     @posts = Post.all
                  .includes(:author)
                  .order(created_at: :desc)
+                 .page(params[:page])
   end
 
   def show
