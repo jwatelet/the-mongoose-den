@@ -36,6 +36,7 @@ end
 
 group :development do
   gem "annotate"
+  gem "letter_opener"
   gem "ruby-lsp", "~> 0.16.4"
   gem "web-console"
 end
