@@ -1,0 +1,25 @@
+<div class="mt-2 user">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <%= profile_image(user, 128, true) %>
+      </figure>
+    </div>
+    <div class="media-content is-flex is-justify-content-space-between">
+      <div class="content">
+        <p>
+          <div>
+            <strong>
+              <%= link_to user.username, user  %>
+            </strong>
+          </div>
+        </p>
+      </div>
+      <nav class="level is-mobile">
+        <div class="level-left is-flex is-flex-direction-row">
+          <%= render 'follows/follow_button', followed_user: user %>
+        </div>
+      </nav>
+    </div>
+  </article>
+</div>

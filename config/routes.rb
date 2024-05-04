@@ -17,6 +17,6 @@ Rails.application.routes.draw do
     resources :likes, only: %i[create destroy], shallow: true, module: "posts"
   end
 
-  resources :users, only: %i[show edit update]
+  resources :users, only: %i[index show edit update]
   resources :follows, only: %i[create destroy]
 end

@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "follow" do %>
+<%= turbo_frame_tag dom_id(followed_user) do %>
   <% follow = current_user.find_follow_for(followed_user)%>
   <% if follow %>
     <%= link_to follow_path(follow, followed_user_id: followed_user.id), class: "level-item unfollow", data: {

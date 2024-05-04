@@ -20,6 +20,8 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
+  paginates_per 10
+
   has_many :posts, foreign_key: "author_id", inverse_of: "author", dependent: :destroy
   has_many :comments, foreign_key: "commenter_id", inverse_of: "commenter", dependent: :destroy
   has_many :likes, foreign_key: "liker_id", inverse_of: "liker", dependent: :destroy
