@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :likes, only: %i[create destroy], shallow: true, module: "posts"
   end
 
+  get "posts/filter/:filter" => "posts#index", as: :filtered_posts
+
   resources :users, only: %i[index show edit update]
   resources :follows, only: %i[create destroy]
 end

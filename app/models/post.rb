@@ -29,6 +29,8 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
 
+  scope :followed_users_posts, ->(user) { where(author: user.followed_users) }
+
   def find_like_from(user)
     likes.find_by(likeable: self, liker: user)
   end

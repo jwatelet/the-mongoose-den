@@ -12,7 +12,7 @@ RSpec.describe "Likes on post" do
       it "shows the like icon" do
         create(:post, author: user)
 
-        visit posts_path
+        visit filtered_posts_path("all")
         click_on(class: "like")
         expect(page).to have_css(".dislike")
       end
@@ -24,7 +24,7 @@ RSpec.describe "Likes on post" do
       it "shows the dislike icon" do
         create(:like, likeable: post, liker: user)
 
-        visit posts_path
+        visit filtered_posts_path("all")
         click_on(class: "dislike")
         expect(page).to have_css(".like")
       end
@@ -46,7 +46,7 @@ RSpec.describe "Likes on post" do
       it "shows the dislike icon" do
         create(:like, likeable: post, liker: user)
 
-        visit posts_path
+        visit filtered_posts_path("all")
         click_on(class: "dislike")
         expect(page).to have_css(".like")
       end

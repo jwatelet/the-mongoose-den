@@ -16,7 +16,7 @@ RSpec.describe "Post have the likes counts on boxes" do
     let!(:like3) { create(:like, likeable: post) }
 
     it "show the number of likes" do
-      visit posts_path
+      visit filtered_posts_path("all")
 
       within ".like" do
         expect(page).to have_content("3")
@@ -28,7 +28,7 @@ RSpec.describe "Post have the likes counts on boxes" do
     let!(:post) { create(:post, author: post_author) }
 
     it "show the number of likes" do
-      visit posts_path
+      visit filtered_posts_path("all")
 
       within ".like" do
         expect(page).to have_content("0")

@@ -2,10 +2,17 @@ class PostsController < ApplicationController
   before_action :action_permited?, only: %i[edit update destroy]
 
   def index
-    @posts = Post.all
-                 .includes(:author)
-                 .order(created_at: :desc)
-                 .page(params[:page])
+    @posts = if params[:filter] == "all"
+               Post.all
+                   .includes(:author)
+                   .order(created_at: :desc)
+                   .page(params[:page])
+             else
+               Post.followed_users_posts(current_user)
+                   .includes(:author)
+                   .order(created_at: :desc)
+                   .page(params[:page])
+             end
   end
 
   def show

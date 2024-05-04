@@ -16,7 +16,7 @@ RSpec.describe "Post have the comment counts on boxes" do
     let!(:comment3) { create(:comment, commentable: post) }
 
     it "show the number of comments" do
-      visit posts_path
+      visit filtered_posts_path("all")
 
       within ".comment" do
         expect(page).to have_content("3")
@@ -28,7 +28,7 @@ RSpec.describe "Post have the comment counts on boxes" do
     let!(:post) { create(:post, author: post_author) }
 
     it "show the number of comments" do
-      visit posts_path
+      visit filtered_posts_path("all")
 
       within ".comment" do
         expect(page).to have_content("0")
