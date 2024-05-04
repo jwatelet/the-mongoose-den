@@ -62,6 +62,8 @@ class User < ApplicationRecord
       user.email = provider_data.info.email
       user.username = provider_data.info.nickname
       user.password = Devise.friendly_token[0, 20]
+      user.confirmation_token = nil
+      user.confirmed_at = Time.now
     end
   end
 
@@ -70,6 +72,8 @@ class User < ApplicationRecord
       user.email = provider_data.info.email
       user.username = provider_data.info.name
       user.password = Devise.friendly_token[0, 20]
+      user.confirmation_token = nil
+      user.confirmed_at = Time.now
     end
   end
 
