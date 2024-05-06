@@ -88,4 +88,10 @@ class User < ApplicationRecord
   def follows?(user)
     followed_users.where(followed_user: user).present?
   end
+
+  private
+
+  def after_confirmation
+    UserMailer.with(user: self).welcome_email.deliver
+  end
 end
