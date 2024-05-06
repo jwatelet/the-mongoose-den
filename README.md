@@ -5,9 +5,8 @@ This is the final project of the ruby course. The purpose of this application is
 
 ## TODO
 
-- Add a page to show all users
-- add icons for omniauth : google and github
-- Sending mails
+- Sending welcome email
+- show followed_users and followers on profile
 - use slug for users URL, and post URLS
 - add notifications for follows
 
