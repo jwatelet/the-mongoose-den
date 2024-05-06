@@ -26,17 +26,23 @@
   <div class="column">
     <div class="followers">
       <h2>Followers</h2>
-      <div class="followers">
-        <i class="fa-solid fa-users"></i>
-        <span><%= user.followers.count %></span>
-      </div>
+
+      <%= link_to followers_user_follows_path(user) do %>
+        <div class="followers">
+          <i class="fa-solid fa-users"></i>
+          <span><%= user.followers.count %></span>
+        </div>
+      <% end %>
     </div>
     <div class="followed-users">
       <h2>Followed users</h2>
-      <div class="followers">
-        <i class="fa-solid fa-users"></i>
-        <span><%= user.followed_users.count %></span>
-      </div>
+
+      <%= link_to  followed_users_user_follows_path(user) do %>
+        <div class="followers">
+          <i class="fa-solid fa-users"></i>
+          <span><%= user.followed_users.count %></span>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
