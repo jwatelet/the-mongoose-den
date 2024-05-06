@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation" data-controller="navbar">
   <div class="navbar-brand">    
     <%= link_to "The Mongoose Den", root_path, class: "navbar-item" %>
-    <%= link_to 'Latests posts', filtered_posts_path("all"), class: "navbar-item"%>
+
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" data-navbar-target="burger" data-action="click->navbar#toggle">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -12,12 +12,21 @@
 
   <div id="navbarBasicExample" class="navbar-menu" data-navbar-target="menu">
     <div class="navbar-start">
+      <%= link_to 'Latests posts', filtered_posts_path("all"), class: "navbar-item"%>
       <%= link_to 'Mongooses', users_path, class: "navbar-item" %>
     </div>
 
     <div class="navbar-end">
         <% if user_signed_in? %>
           <%= render 'layouts/header/create-post-button' %>
+          <div class="navbar-item">
+            <a href="">
+              <span class="fa-layers fa-2x icon">
+                <i class="fa-solid fa-bell"></i>
+                <span class="fa-layers-counter">100</span>
+              </span>
+            </a>
+          </div>
           <%= render 'layouts/header/navbar-dropdown' %>
         <% else %>
           <%= render 'layouts/header/navbar-buttons' %>
