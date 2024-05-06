@@ -1,6 +1,4 @@
-<%= form_for Follow.new do |f| %>
-
-  <%= f.hidden_field :followed_user_id, value: followed_user.id %>
+<%= form_for([followed_user, Follow.new ]) do |f| %>
 
   <%= f.submit "Follow", class: "button is-link follow"  %>
 <% end %>

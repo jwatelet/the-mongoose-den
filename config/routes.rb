@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   get "posts/filter/:filter" => "posts#index", as: :filtered_posts
 
-  resources :users, only: %i[index show edit update]
-  resources :follows, only: %i[create destroy]
+  resources :users, only: %i[index show edit update] do
+    resources :follows, only: %i[create destroy]
+  end
 end
