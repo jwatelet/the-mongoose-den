@@ -1,7 +1,7 @@
 class NotificationsController < ApplicationController
   before_action :action_permited?, only: %i[index]
 
-  after_action :mark_notifications_as_read
+  after_action :mark_notifications_as_read, only: %i[index]
 
   def index
     @notifications = User.find(params[:user_id]).notifications.most_recent
