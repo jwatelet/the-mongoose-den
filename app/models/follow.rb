@@ -19,6 +19,20 @@
 #  fk_rails_...  (follower_id => users.id)
 #
 class Follow < ApplicationRecord
+  after_create :notify_followed_user
+
   belongs_to :follower, class_name: "User"
   belongs_to :followed_user, class_name: "User"
+  has_many :notifications, as: :notifiable, dependent: :destroy
+
+  private
+
+  def notify_followed_user
+    Notification.create(
+      message: "#{follower.username} followed you",
+      notifiable: self,
+      url: Rails.application.routes.url_helpers.user_path(follower),
+      user: followed_user
+    )
+  end
 end

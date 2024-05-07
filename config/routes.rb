@@ -26,5 +26,6 @@ Rails.application.routes.draw do
         get :followed_users
       end
     end
+    resources :notifications, only: [:index]
   end
 end

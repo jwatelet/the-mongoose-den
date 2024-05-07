@@ -20,12 +20,7 @@
         <% if user_signed_in? %>
           <%= render 'layouts/header/create-post-button' %>
           <div class="navbar-item">
-            <a href="">
-              <span class="fa-layers fa-2x icon">
-                <i class="fa-solid fa-bell"></i>
-                <span class="fa-layers-counter">100</span>
-              </span>
-            </a>
+            <%= render 'notifications/button', user: current_user %>
           </div>
           <%= render 'layouts/header/navbar-dropdown' %>
         <% else %>

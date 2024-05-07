@@ -1,0 +1,9 @@
+<div class="columns is-centered m-2">
+  <div class="column is-half">
+    <h1>Notifications</h1>
+    
+    <% @notifications.each do |notification| %>
+     <%= render 'notification', notification: %>
+    <% end %>
+  </div>
+</div>

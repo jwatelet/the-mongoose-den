@@ -1,0 +1,13 @@
+<div class="post-box mt-2">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <%= link_to notification.message, notification.url %>
+          <small>
+            <%= time_ago_in_words(notification.created_at) %>
+          </small>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>

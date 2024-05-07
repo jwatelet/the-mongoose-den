@@ -39,6 +39,7 @@ class User < ApplicationRecord
   has_many :posts, foreign_key: "author_id", inverse_of: "author", dependent: :destroy
   has_many :comments, foreign_key: "commenter_id", inverse_of: "commenter", dependent: :destroy
   has_many :likes, foreign_key: "liker_id", inverse_of: "liker", dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
   has_many :follower_relationships, foreign_key: :followed_user_id, class_name: "Follow", inverse_of: "follower",
                                     dependent: :destroy
