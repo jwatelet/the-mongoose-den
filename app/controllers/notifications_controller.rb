@@ -4,7 +4,7 @@ class NotificationsController < ApplicationController
   after_action :mark_notifications_as_read, only: %i[index]
 
   def index
-    @notifications = User.find(params[:user_id]).notifications.most_recent
+    @notifications = User.find(params[:user_id]).notifications.most_recent.page(params[:page])
   end
 
   private

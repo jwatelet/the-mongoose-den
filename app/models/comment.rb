@@ -20,8 +20,28 @@
 #  fk_rails_...  (commenter_id => users.id)
 #
 class Comment < ApplicationRecord
+  after_create :notify_commentable
+
   belongs_to :commentable, polymorphic: true, counter_cache: true
   belongs_to :commenter, class_name: "User"
 
   validates :content, presence: true
+
+  private
+
+  def notify_commentable
+    case commentable_type
+    when "Post"
+      notify_post_author
+    end
+  end
+
+  def notify_post_author
+    Notification.create(
+      message: "#{commenter.username} commented you post",
+      notifiable: self,
+      url: Rails.application.routes.url_helpers.post_path(commentable),
+      user: commentable.author
+    )
+  end
 end

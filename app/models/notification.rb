@@ -22,6 +22,8 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Notification < ApplicationRecord
+  paginates_per 10
+
   belongs_to :user
   belongs_to :notifiable, polymorphic: true
 

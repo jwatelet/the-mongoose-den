@@ -2,8 +2,7 @@
   <div class="column is-half">
     <h1>Notifications</h1>
     
-    <% @notifications.each do |notification| %>
-     <%= render 'notification', notification: %>
-    <% end %>
+    <%= render @notifications %>
+    <%= paginate @notifications %>
   </div>
 </div>
