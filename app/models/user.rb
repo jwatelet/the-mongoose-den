@@ -58,6 +58,8 @@ class User < ApplicationRecord
 
   validates :username, presence: true
 
+  scope :most_recent, -> { order(created_at: :desc) }
+
   def self.create_from_github(provider_data)
     where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do |user|
       user.email = provider_data.info.email
