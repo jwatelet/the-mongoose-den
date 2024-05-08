@@ -8,6 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+require "faker"
+
 User.transaction do
   20.times do
     user = User.create(
@@ -19,7 +21,7 @@ User.transaction do
     post = Post.create(
       author: user,
       title: Faker::Lorem.sentence,
-      body: Faker::Lorem.paragraph(sentence_count: 10)
+      body: Faker::Lorem.paragraph(sentence_count: 40)
     )
 
     rand(5).times do
