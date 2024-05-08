@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "app_id": "app_ea386944-7a63-4f7b-8940-0ca33f0fd7ff",
+      "org_id": "user_33747553-0922-475e-b5e0-c216573bf51e",
+      "deploy_url": "https://push-n3-par-clevercloud-customers.services.clever-cloud.com/app_ea386944-7a63-4f7b-8940-0ca33f0fd7ff.git",
+      "git_ssh_url": "git+ssh://git@push-n3-par-clevercloud-customers.services.clever-cloud.com/app_ea386944-7a63-4f7b-8940-0ca33f0fd7ff.git",
+      "name": "the-mongoose-den",
+      "alias": "the-mongoose-den"
+    }
+  ]
+}

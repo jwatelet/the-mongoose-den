@@ -79,6 +79,8 @@ test:
 #
 production:
   <<: *default
-  database: the_mongoose_den_production
-  username: the_mongoose_den
-  password: <%= ENV["THE_MONGOOSE_DEN_DATABASE_PASSWORD"] %>
+  database: <%= ENV['POSTGRESQL_ADDON_DB'] %>
+  username: <%= ENV['POSTGRESQL_ADDON_USER'] %>
+  password: <%= ENV['POSTGRESQL_ADDON_PASSWORD'] %>
+  host: <%= ENV['POSTGRESQL_ADDON_HOST'] %>
+  port: <%= ENV['POSTGRESQL_ADDON_PORT'] %>
