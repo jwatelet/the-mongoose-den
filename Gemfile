@@ -4,6 +4,7 @@ ruby "3.1.2"
 gem "bootsnap", require: false
 gem "cssbundling-rails"
 gem "devise"
+gem "faker"
 gem "figaro"
 gem "importmap-rails"
 gem "jbuilder"
@@ -25,7 +26,6 @@ group :development, :test do
   gem "capybara"
   gem "debug", platforms: %i[mri windows]
   gem "factory_bot_rails"
-  gem "faker"
   gem "foreman"
   gem "rspec-rails"
   gem "rubocop"
