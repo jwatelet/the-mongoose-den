@@ -89,4 +89,4 @@ I use [mailgun](https://www.mailgun.com/) to deliver mails
 
 - use slug for users URL, and post URLS
 
-Made for [The Odin Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
+Made for [The Odin Project](https://www.theodinproject.com)
