@@ -41,6 +41,10 @@ Every time you like, comment or follow, a notification will be sent to the user'
 
 For now I use [Gravatar](https://gravatar.com/) to provide avatar for the users. In the future, users will be able to upload their own images.
 
+### Pagination
+
+[Kaminari](https://github.com/kaminari/kaminari) gem is used for pagination
+
 ## Getting started
 
 - Clone this repo
