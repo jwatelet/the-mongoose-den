@@ -21,11 +21,11 @@
 <%- if devise_mapping.omniauthable? %>
   <%= button_to omniauth_authorize_path(resource_name, "github"), class: "button is-link mt-3", data: { turbo: false } do %>
     <i class="fa-brands fa-github mr-3"></i>
-    <span>Github</span>
+    <span>Login with Github</span>
   <% end %>
 
   <%= button_to omniauth_authorize_path(resource_name, "google_oauth2"), class: "button is-link mt-3", data: { turbo: false } do %>
     <i class="fa-brands fa-google mr-3"></i>
-    <span>Google</span>
+    <span>Login with Google</span>
   <% end %>
 <% end %>
