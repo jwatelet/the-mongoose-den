@@ -45,6 +45,11 @@ For now I use [Gravatar](https://gravatar.com/) to provide avatar for the users.
 
 [Kaminari](https://github.com/kaminari/kaminari) gem is used for pagination
 
+## Testing
+
+RSpec and capybara are used. 
+
+
 ## Getting started
 
 - Clone this repo
