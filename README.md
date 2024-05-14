@@ -95,6 +95,7 @@ I use [mailgun](https://www.mailgun.com/) to deliver mails
 
 ## TODO
 
-- use slug for users URL, and post URLS
+- Use slug for users URL, and post URLS
+- Use rich text editor for post
 
 Made for [The Odin Project](https://www.theodinproject.com)
