@@ -18,13 +18,13 @@
 
     <div class="navbar-end">
         <% if user_signed_in? %>
-          <%= render 'layouts/header/create-post-button' %>
+          <%= render 'shared/header/create-post-button' %>
           <div class="navbar-item">
             <%= render 'notifications/button', user: current_user %>
           </div>
-          <%= render 'layouts/header/navbar-dropdown' %>
+          <%= render 'shared/header/navbar-dropdown' %>
         <% else %>
-          <%= render 'layouts/header/navbar-buttons' %>
+          <%= render 'shared/header/navbar-buttons' %>
         <% end %>
     </div>
   </div>
