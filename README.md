@@ -39,7 +39,7 @@ Every time you like, comment or follow, a notification will be sent to the user'
 
 ### Users avatars
 
-For now I use [Gravatar](https://gravatar.com/) to provide avatar for the users. In the future, users will be able to upload their own images.
+For now [Gravatar](https://gravatar.com/) is used to provide avatar for the users. In the future, users will be able to upload their own images.
 
 ### Pagination
 
@@ -47,8 +47,7 @@ For now I use [Gravatar](https://gravatar.com/) to provide avatar for the users.
 
 ## Testing
 
-RSpec and capybara are used. 
-
+RSpec and capybara are used. Integration test are preferred to test functionalities. For that reason capybara is very usefull.
 
 ## Getting started
 
