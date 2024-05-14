@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TheMongooseDen</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="columns is-flex-direction-column is-fullheight-100vh">
+      <header class="column is-narrow">
+        <%= render 'shared/header' %>
+      </header>
+      <%= render 'shared/flash' %>
+
+      <div class="column m-3">
+        <div class="columns is-centered is-vcentered">
+          <div class="column is-one-quarter is-flex">
+            <div>
+              <div class="content">
+                <h1>The Mongoose Den</h1>
+                <h3>Building Bonds, Sharing Knowledge.</h3>
+                <p>
+                  your go-to social platform for blogging and sharing.
+                  Join a vibrant community where members connect, mentor, and grow together.
+                  Share your stories, insights, and experiences through blogs, and discover content from others that inspires and informs.
+                  Dive in and let your voice be heard!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-quarter">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-narrow">
+        <%= render 'shared/footer' %>
+      </div> 
+    </div>    
+  </body>
+</html>
