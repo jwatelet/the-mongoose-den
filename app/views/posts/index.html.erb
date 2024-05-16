@@ -1,9 +1,14 @@
 <div class="columns is-centered m-2">
   <div class="column is-half">
-    <h1>Posts</h1>
       <% @posts.each do |post| %>
         <%= render "post_box", post: %>
       <% end %>
     <%= paginate @posts %>
+    <% unless @posts.any? %>
+      <p>
+        If You do not see anything here it's because you do not follow any users.
+        Follow your fellow mongoose to see their last posts !
+      </p>
+    <% end %>
   </div>
 </div>
