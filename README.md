@@ -95,9 +95,7 @@ I use [mailgun](https://www.mailgun.com/) to deliver mails
 
 ## TODO
 
-- Use rich text editor for post
 - style properly rich text editor input
-- fix destroy for post
 - validates images from rich text editor
 - Use slug for users URL, and post URLS
 
