@@ -5,6 +5,9 @@ require_relative "../config/environment"
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require "rspec/rails"
+require "capybara/rails"
+require "action_text/system_test_helper"
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -34,6 +37,7 @@ RSpec.configure do |config|
   config.fixture_paths = [
     Rails.root.join("spec/fixtures")
   ]
+  config.include Capybara::DSL
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -65,4 +69,5 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
   config.include Warden::Test::Helpers
+  config.include ActionText::SystemTestHelper, type: :system
 end

@@ -3,7 +3,6 @@
 # Table name: posts
 #
 #  id             :bigint           not null, primary key
-#  body           :text
 #  comments_count :integer          default(0)
 #  likes_count    :integer          default(0)
 #  title          :string
@@ -22,7 +21,7 @@
 FactoryBot.define do
   factory :post do
     title { Faker::Lorem.sentence }
-    body { Faker::Lorem.paragraph }
+    content { Faker::Lorem.paragraph }
     author { create(:user) }
   end
 end

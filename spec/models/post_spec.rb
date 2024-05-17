@@ -3,7 +3,6 @@
 # Table name: posts
 #
 #  id             :bigint           not null, primary key
-#  body           :text
 #  comments_count :integer          default(0)
 #  likes_count    :integer          default(0)
 #  title          :string

@@ -19,19 +19,19 @@
   </div>
 
   <div class="field">
-    <%= f.label :body, class: "label" %>
-    <% unless @post.errors[:body].present? %>
+    <%= f.label :content, class: "label" %>
+    <% unless @post.errors[:content].present? %>
       <div class="control">
-        <%= f.text_area :body, rows: 10, class: "textarea" %>
+        <%= f.rich_text_area :content, class: "textarea" %>
       </div>
     <% else %>
       <div class="control has-icons-left has-icons-right">
-        <%= f.text_area :body, rows:10, class: "textarea is-danger" %>
+        <%= f.rich_text_area :content, class: "textarea is-danger" %>
         <span class="icon is-small is-right">
          <i class="fas fa-exclamation-triangle"></i>
         </span>
       </div>
-      <% @post.errors.full_messages_for(:body).each do |message| %>
+      <% @post.errors.full_messages_for(:content).each do |message| %>
         <p class="help is-danger"> <%= message %> </p>
       <% end %>
     <% end %>

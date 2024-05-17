@@ -3,7 +3,6 @@
 # Table name: posts
 #
 #  id             :bigint           not null, primary key
-#  body           :text
 #  comments_count :integer          default(0)
 #  likes_count    :integer          default(0)
 #  title          :string
@@ -26,8 +25,10 @@ class Post < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :likes, as: :likeable, dependent: :destroy
 
+  has_rich_text :content
+
   validates :title, presence: true
-  validates :body, presence: true, length: { minimum: 10 }
+  validates :content, presence: true
 
   scope :followed_users_posts, ->(user) { where(author: user.followed_users) }
 
