@@ -10,3 +10,5 @@ pin "@fortawesome/fontawesome-svg-core", to: "@fortawesome--fontawesome-svg-core
 pin "@fortawesome/free-brands-svg-icons", to: "@fortawesome--free-brands-svg-icons.js" # @6.5.2
 pin "@fortawesome/free-regular-svg-icons", to: "@fortawesome--free-regular-svg-icons.js" # @6.5.2
 pin "@fortawesome/free-solid-svg-icons", to: "@fortawesome--free-solid-svg-icons.js" # @6.5.2
+pin "trix"
+pin "@rails/actiontext", to: "actiontext.esm.js"
