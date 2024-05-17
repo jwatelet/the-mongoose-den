@@ -34,3 +34,15 @@ trix-toolbar .trix-button-row {
   flex-wrap: wrap;
 }
 
+@media (prefers-color-scheme: dark) {
+  .trix-button-row {
+    .trix-button-group {
+        .trix-button {
+            border: 0;
+            background-color: transparent;
+            filter: invert(100%);
+        }
+    }
+  }
+}
+
