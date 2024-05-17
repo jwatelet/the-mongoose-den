@@ -14,6 +14,7 @@
             <%= link_to 'Edit', edit_post_path(@post), class: "button is-link mr-1" %>
             <%= link_to "Destroy", post_path(@post), class: "button is-danger mr-1", data: {
                             turbo_method: :delete,
+                            turbo_frame: "_top",
                             turbo_confirm: "Are you sure?"
                           } %>
         <% end %>
