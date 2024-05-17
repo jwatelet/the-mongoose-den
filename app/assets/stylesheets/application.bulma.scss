@@ -17,14 +17,13 @@ $beige-lighter: #EFF0EB;
   $link: $sable,
   $info: $light-brown
 );
-
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+@import 'actiontext.css';
 
 @import 'bulma/bulma';
 
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
 
 .is-fullheight-100vh {
   min-height: 100vh;
 }
-
-@import 'actiontext.css';

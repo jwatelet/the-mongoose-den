@@ -22,14 +22,11 @@
     <%= f.label :content, class: "label" %>
     <% unless @post.errors[:content].present? %>
       <div class="control">
-        <%= f.rich_text_area :content, class: "textarea" %>
+        <%= f.rich_text_area :content, class: "trix-content" %>
       </div>
     <% else %>
-      <div class="control has-icons-left has-icons-right">
-        <%= f.rich_text_area :content, class: "textarea is-danger" %>
-        <span class="icon is-small is-right">
-         <i class="fas fa-exclamation-triangle"></i>
-        </span>
+      <div class="control">
+        <%= f.rich_text_area :content, class: "trix-content is-danger" %>
       </div>
       <% @post.errors.full_messages_for(:content).each do |message| %>
         <p class="help is-danger"> <%= message %> </p>

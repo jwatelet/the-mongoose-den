@@ -1,14 +1,12 @@
 <div class="container is-desktop">
   <div class="content mx-5">
     <%= turbo_frame_tag "post" do %>
-      <div class="content">
+      <div>
         <h1>
           <%= @post.title %>
         </h1>
     
-        <p>
-          <%= @post.content %>
-        </p>
+        <%= @post.content %>
     
       </div>
       <div class="actions is-flex is-flex-direction-row mt-2">
