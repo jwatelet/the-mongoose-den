@@ -18,10 +18,22 @@ $beige-lighter: #EFF0EB;
   $info: $light-brown
 );
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+@import "trix/dist/trix";
 @import 'actiontext.css';
-
 @import 'bulma/bulma';
 
 .is-fullheight-100vh {
   min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  .trix-button-row {
+    .trix-button-group {
+        .trix-button {
+            border: 0;
+            background-color: transparent;
+            filter: invert(100%);
+        }
+    }
+  }
 }
