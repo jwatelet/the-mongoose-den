@@ -22,6 +22,10 @@ $beige-lighter: #EFF0EB;
 @import 'bulma/bulma';
 
 
+.logo {
+  width: 150px;
+}
+
 trix-toolbar .trix-button-row {
   flex-wrap: wrap;
 }
