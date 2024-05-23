@@ -21,9 +21,6 @@ $beige-lighter: #EFF0EB;
 @import "trix/dist/trix";
 @import 'bulma/bulma';
 
-.is-fullheight-100vh {
-  min-height: 100vh;
-}
 
 trix-toolbar .trix-button-row {
   flex-wrap: wrap;
