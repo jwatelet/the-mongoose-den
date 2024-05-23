@@ -18,7 +18,7 @@ RSpec.describe "Notify post like" do
     it "shows notification" do
       visit user_notifications_path(user)
 
-      expect(page).to have_content("#{other_user.username} liked you post")
+      expect(page).to have_content("#{other_user.username} liked your post")
     end
 
     it "shows notification counter" do

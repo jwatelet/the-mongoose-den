@@ -36,7 +36,7 @@ class Like < ApplicationRecord
 
   def notify_post_author
     Notification.create(
-      message: "#{liker.username} liked you post",
+      message: "#{liker.username} liked your post",
       notifiable: self,
       url: Rails.application.routes.url_helpers.post_path(likeable),
       user: likeable.author
