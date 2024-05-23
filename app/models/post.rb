@@ -31,6 +31,7 @@ class Post < ApplicationRecord
   validates :content, presence: true
 
   scope :followed_users_posts, ->(user) { where(author: user.followed_users) }
+  scope :most_recent_first, -> { order(created_at: :desc) }
 
   def find_like_from(user)
     likes.find_by(likeable: self, liker: user)
