@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :action_permited?, only: %i[edit update]
 
   def index

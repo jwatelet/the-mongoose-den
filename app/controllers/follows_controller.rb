@@ -1,4 +1,6 @@
 class FollowsController < ApplicationController
+  before_action :authenticate_user!
+
   def followers
     @user = User.find(params[:user_id])
     @followers = @user.followers.page(params[:page])

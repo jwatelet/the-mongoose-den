@@ -9,7 +9,7 @@ RSpec.describe "Sign up" do
       fill_in "Password", with: "azerty1234"
       fill_in "Password confirmation", with: "azerty1234"
       click_on "commit"
-      expect(page).to have_content("You need to sign in or sign up before continuing.")
+      expect(page).to have_content("A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.")
     end
   end
 end

@@ -30,7 +30,13 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
 
-  scope :followed_users_posts, ->(user) { where(author: user.followed_users) }
+  scope :followed_users_posts, lambda { |user|
+    if user.nil?
+      where(author: [])
+    else
+      where(author: user.followed_users)
+    end
+  }
   scope :most_recent_first, -> { order(created_at: :desc) }
 
   def find_like_from(user)

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: %i[show index]
   before_action :action_permited?, only: %i[edit update destroy]
 
   def index
