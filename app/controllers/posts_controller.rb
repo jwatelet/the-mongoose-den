@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :action_permited?, only: %i[edit update destroy]
 
   def index
+    redirect_to new_user_session_path if current_user.nil? && params[:filter].nil?
     @posts = if params[:filter] == "all"
                Post.all
                    .includes(:author)
