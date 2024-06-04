@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @comments = @post
                 .comments
                 .includes(:commenter)
-                .order(created_at: :desc)
+                .order(:created_at)
 
     @comment = @post.comments.new
   end
