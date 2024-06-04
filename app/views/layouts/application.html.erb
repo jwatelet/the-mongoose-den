@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The Mongoose Den</title>
+    <%= display_meta_tags site: Rails.application.class.module_parent.name,
+                        description: 'Modern Ruby on Rails blog',
+                        keywords: 'ruby, blog, ruby-on-rails',
+                        reverse: true, # app name at the end like `5 posts | SupeRails`
+                        image: asset_url("mongoose.png"),
+                        og: {
+                          image: asset_url("mongoose.png"),
+                        }
+    %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
