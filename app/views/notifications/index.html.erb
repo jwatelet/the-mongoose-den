@@ -1,7 +1,10 @@
 <div class="columns is-centered m-2">
   <div class="column is-half">
-    <h1>Notifications</h1>
     
+    <% unless @notifications.any? %>
+        You do not have any notifications
+    <% end %>
+
     <%= render @notifications %>
     <%= paginate @notifications %>
   </div>
