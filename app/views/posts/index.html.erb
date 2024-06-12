@@ -7,7 +7,8 @@
     <% unless @posts.any? %>
       <p>
         If You do not see anything here it's because you do not follow any users.
-        Follow your fellow mongoose to see their last posts !
+        Follow your fellow <%= link_to 'Mongooses', users_path %> to see their last posts !
+        You can also check all last post <%= link_to 'here', filtered_posts_path("all") %>
       </p>
     <% end %>
   </div>

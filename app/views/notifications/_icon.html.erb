@@ -1,5 +1,3 @@
-<%= link_to user_notifications_path(user), class: "is-hidden-mobile" do %>
-
   <% if user.notifications.not_read.any? %>
     <span class="fa-layers fa-2x icon notification-count">
       <i class="fa-solid fa-bell"></i>
@@ -10,4 +8,3 @@
       <i class="fa-solid fa-bell"></i>
     </span>
   <% end %>
-<% end %>

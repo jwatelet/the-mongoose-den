@@ -1,0 +1,30 @@
+<nav class="navbar is-link is-fixed-bottom is-hidden-tablet" role="navigation">
+    <div class="navbar-brand">
+
+        <%= link_to root_path, class: "navbar-item is-expanded is-block has-text-centered" do %>
+            <span class="fa-layers icon fa-2x">
+              <i class="fa-solid fa-list"></i>
+            </span>  
+            <p class="is-size-7">Timeline</p>
+        <% end %>
+
+        <%= link_to users_path,  class: "navbar-item is-expanded is-block has-text-centered"  do %>
+            <span class="fa-layers icon fa-2x">
+              <i class="fa-solid fa-users"></i>
+            </span>  
+            <p class="is-size-7">Mongooses</p>
+        <% end%>
+
+        <%= link_to new_post_path, class: "navbar-item is-expanded is-block has-text-centered" do %>
+            <span class="fa-layers icon fa-2x">
+              <i class="fa-solid fa-pen"></i>
+            </span>  
+            <p class="is-size-7">New post</p>
+        <% end %>
+
+        <%= link_to user_notifications_path(user), class: "navbar-item is-expanded is-block has-text-centered"  do %>
+            <%= render "notifications/icon", user: user %>
+            <p class="is-size-7">Notifications</p>
+        <% end %>
+    </div>
+</nav>

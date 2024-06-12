@@ -18,8 +18,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <div class="columns is-flex-direction-column is-fullheight-100vh">
+  <body class="has-navbar-fixed-bottom"> 
       <header class="column is-narrow">
         <%= render 'shared/header' %>
       </header>
@@ -28,6 +27,6 @@
       <div class="column is-narrow">
         <%= render 'shared/footer' %>
       </div> 
-    </div>    
+     <%= render 'shared/mobile-navbar', user: current_user %>
   </body>
 </html>

@@ -15,7 +15,7 @@
   <div id="navbarBasicExample" class="navbar-menu" data-navbar-target="menu">
     <div class="navbar-start">
       <%= link_to 'Latests posts', filtered_posts_path("all"), class: "navbar-item"%>
-      <%= link_to 'Mongooses', users_path, class: "navbar-item" %>
+      <%= link_to 'Mongooses', users_path, class: "navbar-item is-hidden-mobile" %>
     </div>
 
     <div class="navbar-end">
