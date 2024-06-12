@@ -22,9 +22,11 @@
             <p class="is-size-7">New post</p>
         <% end %>
 
-        <%= link_to user_notifications_path(user), class: "navbar-item is-expanded is-block has-text-centered"  do %>
-            <%= render "notifications/icon", user: user %>
-            <p class="is-size-7">Notifications</p>
+        <% unless user.nil? %>
+          <%= link_to user_notifications_path(user), class: "navbar-item is-expanded is-block has-text-centered"  do %>
+              <%= render "notifications/icon", user: user %>
+              <p class="is-size-7">Notifications</p>
+          <% end %>
         <% end %>
     </div>
 </nav>
