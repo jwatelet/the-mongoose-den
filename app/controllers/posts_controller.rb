@@ -25,6 +25,8 @@ class PostsController < ApplicationController
                 .order(:created_at)
 
     @comment = @post.comments.new
+
+    @page_title = @post.title
   end
 
   def new
